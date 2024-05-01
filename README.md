@@ -1,3 +1,4 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 Github - https://github.com/astro215/GAN-RMFC-Div-A-CaptionCraft/edit/main
 
 
