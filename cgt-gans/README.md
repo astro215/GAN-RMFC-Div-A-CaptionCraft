@@ -39,8 +39,6 @@ The discriminator is structured around a `RobertaDiscriminator`:
 - **Integration of CLIP and GPT**: The merging of visual and textual models (CLIP for visual embeddings and GPT-2 for text generation) is a notable innovation that enhances the generator's ability to create relevant and contextually appropriate captions based on visual inputs.
 - **Training Requirements**: As noted, the uninitialized weights (e.g., RoBERTa's pooler layer) indicate the need for further fine-tuning and training on a downstream task specific to the application, underscoring the adaptability and potential customization of the model.
 
-### Conclusion
-The use of a CLIP-based image encoder combined with a GPT-based text generator represents a powerful approach to bridging the gap between visual data and natural language. The discriminator's role in refining the generator's output through adversarial training further enhances the capability to produce accurate and meaningful image captions. This architecture leverages the strengths of advanced models in NLP and computer vision to tackle complex cross-modal tasks.
 
  **Model Architecture**
 
