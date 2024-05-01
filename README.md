@@ -1,7 +1,4 @@
-# GAN-RMFC-Div-A-CaptionCraft
-
-
-Github - https://github.com/astro215/cgt-gans/tree/main
+Github - https://github.com/astro215/GAN-RMFC-Div-A-CaptionCraft/edit/main
 
 
 cgt-gans
@@ -84,6 +81,24 @@ Models
 		![Coco2014](https://i.ibb.co/cyNgPHf/top4.png)
 
 
+**Pix2Struc**
+
+- **Datasets** - SciCap 
+- **Notebooks** 
+	- **SciCap** - https://www.kaggle.com/code/astronlp/caption-pretrained
+
+- **Results**
+	- **SciCap** - Just making captions around the OCR text extracted from the patches of image.
+		
+
+	- **Coco2014** - Can't identify the objects correctly.
+
+
+**Cgt-GANs**
+
+- **Datasets** - Coco2014
+- **Notebooks** - https://github.com/astro215/cgt-gans/tree/main/training
+- ** Deployment** - 
 
 
 
@@ -95,4 +110,5 @@ Models
 # References
 - WGANS - https://github.com/bastienvanderplaetse/gan-image-captioning 
 - Pix2Struct - https://arxiv.org/abs/2210.03347 , 
+- 
 - 
