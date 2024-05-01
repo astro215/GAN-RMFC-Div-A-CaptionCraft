@@ -3,6 +3,15 @@
 
 - github - https://github.com/astro215/caption-craft-gans/blob/main/training/caption-craft-gans-test-8.ipynb
 - kaggle - https://www.kaggle.com/code/astro215/caption-craft-gans-test
+
+
+
+
+
+
+
+https://github.com/astro215/GAN-RMFC-Div-A-CaptionCraft/assets/111174198/a0c35328-b831-4f98-a108-917b7903694d
+
 - Deployement - [Gradio](https://huggingface.co/spaces/astroCodes/caption-craft-gans)
 
 
