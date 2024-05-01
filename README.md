@@ -1,4 +1,3 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 Github - https://github.com/astro215/GAN-RMFC-Div-A-CaptionCraft/edit/main
 
 
@@ -129,6 +128,9 @@ Loss Functions
 
 - **Generator Loss (G_loss)**
 The generator loss is computed as a combination of the reinforcement learning reward (`reward_loss`) and the feature discriminator loss (`fd_loss`):
+
+
+	![\Large G_{\text{loss}} = \text{reward\_weight} \times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}](https://latex.codecogs.com/svg.latex?\Large&space;	G_{\text{loss}} = \text{reward\_weight}\times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}) 
 
 	$$
 	G_{\text{loss}} = \text{reward\_weight} \times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}
