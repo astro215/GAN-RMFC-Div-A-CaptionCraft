@@ -3,8 +3,7 @@
 
 - github - https://github.com/astro215/caption-craft-gans/blob/main/training/caption-craft-gans-test-8.ipynb
 - kaggle - https://www.kaggle.com/code/astro215/caption-craft-gans-test
-
--Deployement - [Gradio](https://huggingface.co/spaces/astroCodes/caption-craft-gans)
+- Deployement - [Gradio](https://huggingface.co/spaces/astroCodes/caption-craft-gans)
 
 
 
