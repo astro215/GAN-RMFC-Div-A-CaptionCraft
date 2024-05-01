@@ -173,11 +173,7 @@ The model is a sophisticated system that integrates generative and discriminativ
 
 
 - **Datasets** - Coco2014
-- **Notebooks** - https://github.com/astro215/caption-craft-gans/tree/main/training
-- **Deployment** - 
-
-
-
+- **Notebooks** - https://github.com/astro215/GAN-RMFC-Div-A-CaptionCraft/blob/main/caption-craft-gans/training
 
 
 
