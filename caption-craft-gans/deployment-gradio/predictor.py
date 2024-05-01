@@ -31,11 +31,6 @@ TNS = Union[Tuple[TN, ...], List[TN]]
 TSN = Optional[TS]
 TA = Union[T, ARRAY]
 
-# WEIGHTS_PATHS = {
-#     "coco": r"C:\Users\jaini\Downloads\CgtGAN-main\CgtGAN-main\cgt-gan-epoch-1\model\model.pt",
-#     "coco-1-epoch": r"C:\Users\jaini\Downloads\CgtGAN-main\CgtGAN-main\cgt-gan-epoch-1\best\model.pt",
-#     "coco-4-epoch" : r"C:\Users\jaini\Downloads\CgtGAN-main\CgtGAN-main\models\model-epoch4 - best.pt"
-# }
 
 D = torch.device
 CPU = torch.device("cpu")

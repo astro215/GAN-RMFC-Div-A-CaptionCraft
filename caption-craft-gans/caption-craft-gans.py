@@ -8,12 +8,11 @@ import os
 import os.path as op
 from utils.logger import setup_logger
 from utils.misc import mkdir, set_seed
-from models import ClipCaptionModel, MLP, Mapping_Network
-from models import ClipCocoDatasetImageWise, ClipCocoDatasetCaptionWise, TextFeatures, PairsFeatures
+from models import ClipCaptionModel, MLP
+from models import ClipCocoDatasetImageWise , TextFeatures, PairsFeatures
 from models import ScstRewardCLIPCriterion
 from models import RobertaDiscriminator
 from transformers import AdamW, get_linear_schedule_with_warmup, get_constant_schedule_with_warmup
-from transformers import GPT2Tokenizer, GPT2LMHeadModel
 import sys
 import json
 from tqdm import tqdm

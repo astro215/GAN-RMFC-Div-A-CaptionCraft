@@ -17,7 +17,7 @@ import torch.nn.functional as F
 import numpy as np
 from collections import OrderedDict
 import clip
-from utils.inference import BeamHypotheses, top_k_top_p_filtering
+from utils.inference import top_k_top_p_filtering
 from utils.distributional_utils import AllGather, is_main_process, synchronize
 all_gather = AllGather.apply
 from torch.autograd import Variable, grad

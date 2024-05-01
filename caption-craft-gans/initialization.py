@@ -6,20 +6,14 @@ from enum import Enum
 from transformers import GPT2Tokenizer, GPT2LMHeadModel, AdamW, get_constant_schedule_with_warmup
 from tqdm import tqdm
 import os
-import pickle
 import sys
 import argparse
-import json
 from typing import Tuple, Optional, Union, overload
-from run_inference import evalation
-import random
 import numpy as np
 from utils.misc import mkdir, set_seed
-from models import ClipCocoDatasetCaptionWise, ClipCaptionModel, MLP
+from models import ClipCocoDatasetCaptionWise, ClipCaptionModel
 from models import ClipCaptionModel
-from models import MLP
 import os.path as op
-import time
 from utils.distributional_utils import json_writer
 from pycocotools.coco import COCO
 from pycocoevalcap.eval import COCOEvalCap
