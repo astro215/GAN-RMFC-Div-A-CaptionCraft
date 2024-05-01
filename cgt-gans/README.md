@@ -141,8 +141,9 @@ In `RobertaDiscriminator`, the goal is to discern real from fake captions relati
 
   - **CLIP Score:** A proprietary metric from OpenAI's CLIP model, which leverages the ability of CLIP to assess similarity between text and images effectively. It is essentially a scaled dot product of the normalized feature vectors.
     $$
-    \{CLIP Score} = e^{s} \cdot \left(\frac{\{features}_{\{image}} \cdot \{features}_{\{text}}^T}{\|\{features}_{\{image}}\| \|\{features}_{\={text}}\|}\right)
-    \$$
+\text{CLIP Score} = e^s \cdot \left(\frac{\text{features}_{\text{image}} \cdot \text{features}_{\text{text}}^T}{\|\text{features}_{\text{image}}\| \|\text{features}_{\text{text}}\|}\right)
+    $$
+
     where $$\( s \)$$ is the learned scale parameter in the CLIP model.
 
 These scores are essential for the GAN framework in evaluating and enhancing the quality of generated captions relative to their corresponding images, guiding the generator (caption model) to produce more accurate and contextually relevant text.
