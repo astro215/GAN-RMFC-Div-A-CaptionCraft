@@ -276,22 +276,6 @@ class MLP(nn.Module):
             self.model.apply(normal_init_weights)
 
 
-class Mapping_Network(nn.Module):
-    def __init__(self, sizes: Tuple[int, ...], bias=True, act='tanh'):
-        super(Mapping_Network, self).__init__()
-        self.model = MLP(sizes, bias, act)
-
-    def initialization(self, init_method: str = "normal", sigma: float = 0.1):
-        self.model.initialization(init_method, sigma)
-
-    def forward(self, x: torch.Tensor, training=True) -> torch.Tensor:
-        if training:
-            self.model.train()
-            return x + self.model(x)
-        else:
-            self.model.eval()
-            with torch.no_grad():
-                return x + self.model(x)
        
 class MlpTransformer(nn.Module):
     def __init__(self, in_dim, h_dim, out_d: Optional[int] = None, act=nnf.relu, dropout=0.):
