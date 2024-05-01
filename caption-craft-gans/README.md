@@ -1,12 +1,9 @@
-cgt-gans
---
-
-- github - https://github.com/astro215/cgt-gans/blob/main/training/cgt-gans-test-8.ipynb
-- kaggle - https://www.kaggle.com/code/astro215/cgt-gans-test
-
-
-# **Cgt-GANs**
+# **Caption Craft GANS**
 - The model involves training a generative model (generator) and a discriminative model (discriminator) using a paired dataset of image and caption embeddings. The objective is to generate captions that are contextually and semantically aligned with given images. The system uses a GAN-like architecture where the generator tries to create plausible captions, and the discriminator evaluates them.
+
+
+- github - https://github.com/astro215/caption-craft-gans/blob/main/training/caption-craft-gans-test-8.ipynb
+- kaggle - https://www.kaggle.com/code/astro215/caption-craft-gans-test
 
 
 ### Generator Model Architecture
@@ -103,13 +100,8 @@ The model is a sophisticated system that integrates generative and discriminativ
 
 
 - **Datasets** - Coco2014
-- **Notebooks** - https://github.com/astro215/cgt-gans/tree/main/training
+- **Notebooks** - https://github.com/astro215/caption-craft-gans/tree/main/training
 - **Deployment** - 
-
-
-
-
-
 
 
 
