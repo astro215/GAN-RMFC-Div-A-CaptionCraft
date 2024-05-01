@@ -20,10 +20,10 @@ https://github.com/astro215/GAN-RMFC-Div-A-CaptionCraft/assets/111174198/a0c3532
 - 
 SciCap 
 - graphs dataset (SciCap)- https://github.com/tingyaohsu/SciCap
-- custom split -
-- hugging-face - https://huggingface.co/datasets/astro21/private_gans_split	
-- kaggel - https://www.kaggle.com/datasets/jainilpatelbtech2021/gans-dataset-cp/versions/1
-	- metadata  
+- custom split
+	- hugging-face - https://huggingface.co/datasets/astro21/private_gans_split/blob/main/README.md	
+	- kaggle - https://www.kaggle.com/datasets/jainilpatelbtech2021/gans-dataset-cp/versions/1
+		- metadata  
 
 			  features:
 			  - name: image
