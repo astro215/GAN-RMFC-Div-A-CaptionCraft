@@ -23,7 +23,6 @@ from pycocotools.coco import COCO
 from pycocoevalcap.eval import COCOEvalCap
 from utils.distributional_utils import get_rank, is_main_process, synchronize, ensure_init_process_group, get_world_size
 from enum import Enum
-from run_inference import evalation
 import gc
 import random
 import numpy as np
