@@ -44,15 +44,7 @@ SciCap
 			    num_examples: 13355
 			  download_size: 4074942870
 			  dataset_size: 3985723570.9859996
-			configs:
-			- config_name: default
-			  data_files:
-			  - split: train
-			    path: data/train-*
-			  - split: val
-			    path: data/val-*
-			  - split: test
-			    path: data/test-*
+			
 			    
 - pre-processed (.npy , .txt features , captions ) - https://www.kaggle.com/datasets/jainilpatelbtech2021/dataset-gans-train
 
