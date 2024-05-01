@@ -107,9 +107,6 @@ Models
 
 - **Results**
 	- **SciCap** - Just making captions around the OCR text extracted from the patches of image.
-	- 
-		
-
 	- **Coco2014** - Can't identify the objects correctly.
 
 
