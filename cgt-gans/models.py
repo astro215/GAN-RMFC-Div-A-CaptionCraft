@@ -750,3 +750,76 @@ class RobertaDiscriminator(nn.Module):
         loss = - sample_logprobs * reward
         loss = loss.mean()
         return loss
+
+
+
+class ClipDiscriminator(torch.nn.Module):
+    """
+    TODO: negative sampling
+    """
+    def __init__(self, args):
+        super().__init__()
+        self.clip_model, preprocess = clip.load(args.clip_model_type, device=args.device, jit=False)
+        self.text_features = None
+        self.args = args
+        self.l1loss = torch.nn.L1Loss(reduction='none')
+        self.cos_score = None
+        self.l1_score = None
+        self.clip_score = None
+
+    def forward(self, text, image_features, gt_features, bs):
+        self.text_features = None
+        with torch.no_grad():
+            try:
+                text = clip.tokenize(text).to(self.args.device)
+            except:
+                text = clip.tokenize(text, truncate=True).to(self.args.device)
+            text_features = self.clip_model.encode_text(text)
+            self.text_features = text_features
+            # if is_training:
+            #     text_features = all_gather(text_features, self.args)
+            #     image_features = all_gather(image_features, self.args)
+            #     torch.distributed.barrier()
+            image_features = torch.vstack(image_features)
+            gt_features = torch.vstack(gt_features)
+            logit_scale = self.clip_model.logit_scale.exp()
+
+            loss = self.l1loss(gt_features, text_features).mean(axis=1)
+            l1_score = logit_scale * (1 - loss)
+            self.l1_score = l1_score[:-bs].mean().item()
+
+
+            gt_features = gt_features / gt_features.norm(dim=1, keepdim=True)
+            text_features = text_features / text_features.norm(dim=1, keepdim=True)
+            logits_per_image = logit_scale * gt_features @ text_features.t().type_as(gt_features)
+            batch_size = gt_features.shape[0]
+            diag_ind = np.arange(batch_size)
+            cos_score = logits_per_image[diag_ind, diag_ind]
+            self.cos_score = cos_score[:-bs].mean().item()
+ 
+            image_features = image_features / image_features.norm(dim=1, keepdim=True)
+            clip_logits = logit_scale * image_features @ text_features.t().type_as(image_features)
+            clip_score = clip_logits[diag_ind, diag_ind]
+            self.clip_score = clip_score[:-bs].mean().item()
+
+            cos_w = self.args.cos_weight
+            clip_w = self.args.clip_weight
+
+            sim_score = cos_w * cos_score + (1 - cos_w) * l1_score
+            score =  (1 - clip_w) * sim_score + clip_w * clip_score
+
+            return score
+
+    def get_score(self):
+        return self.l1_score, self.cos_score, self.clip_score
+
+
+
+    def get_text_features(self):
+        if self.args.normalize_prefix:
+            text_features = self.text_features / self.text_features.norm(dim=1, keepdim=True)
+        else:
+            text_features = self.text_features
+        text_features = text_features.to(dtype=torch.float32)
+        text_features = text_features.to(self.args.device)
+        return text_features
