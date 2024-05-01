@@ -130,8 +130,9 @@ Loss Functions
 The generator loss is computed as a combination of the reinforcement learning reward (`reward_loss`) and the feature discriminator loss (`fd_loss`):
 
 	$$
-	G\_loss = \text{reward\_weight} \times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}
+	G_{\text{loss}} = \text{reward\_weight} \times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}
 	$$
+
 
 
 - **reward_loss**: This is a policy gradient loss used to optimize the generator in a reinforcement learning setup where the generator's output (caption) is treated as an action. The loss encourages the generator to produce actions that lead to higher rewards.
