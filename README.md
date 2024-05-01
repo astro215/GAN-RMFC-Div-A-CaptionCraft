@@ -185,13 +185,26 @@ The model is a sophisticated system that integrates generative and discriminativ
 
 
 
-
-
 # References
 - WGANS - https://github.com/bastienvanderplaetse/gan-image-captioning 
 - Pix2Struct - https://arxiv.org/abs/2210.03347 , 
-- 
-- https://github.com/fkodom/clip-text-decoder
-- https://medium.com/@uppalamukesh/clipcap-clip-prefix-for-image-captioning-3970c73573bc
-- https://github.com/jmisilo/clip-gpt-captioning
-- https://arxiv.org/abs/2211.00575
+- Clip
+	- https://github.com/fkodom/clip-text-decoder
+	- https://medium.com/@uppalamukesh/clipcap-clip-prefix-for-image-captioning-3970c73573bc
+	- https://github.com/jmisilo/clip-gpt-captioning
+	- https://arxiv.org/abs/2211.00575
+
+
+# Literature Survey 
+- TransGAN - https://arxiv.org/abs/2102.07074
+- Attention Is All You Need - https://arxiv.org/abs/1706.03762
+- GANsformer - https://arxiv.org/pdf/2103.01209v2
+- ViTGAN - https://arxiv.org/pdf/2107.04589
+- WGANS - https://github.com/bastienvanderplaetse/gan-image-captioning 
+- Pix2Struct - https://arxiv.org/abs/2210.03347 , 
+- Clip
+	- https://github.com/fkodom/clip-text-decoder
+	- https://medium.com/@uppalamukesh/clipcap-clip-prefix-for-image-captioning-3970c73573bc
+	- https://github.com/jmisilo/clip-gpt-captioning
+	- https://arxiv.org/abs/2211.00575
+
