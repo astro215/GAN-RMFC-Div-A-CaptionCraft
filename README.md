@@ -131,9 +131,9 @@ The generator loss is computed as a combination of the reinforcement learning re
 
 
 
-	$
-	[ D\_loss = \text{reward\_weight} \times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}]
-	$
+	$$
+	G\_loss = \{reward\_weight} \times \{reward\_loss} + (1 - \{reward\_weight}) \times \{fd\_loss}
+	$$
 
 
 
@@ -148,7 +148,7 @@ $$
 [ D\_loss = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \cdot \log(p(y_i)) + (1 - y_i) \cdot \log(1 - p(y_i)) \right]]
 $$
 
-where \( p(y_i) \) is the discriminator's probability estimate for the i-th example being real, and \( y_i \) is the true label (1 for real, 0 for generated).
+where $$\( p(y_i) \)$$ is the discriminator's probability estimate for the i-th example being real, and $$\( y_i \)$$ is the true label (1 for real, 0 for generated).
 
 **Reward System**
 
@@ -166,8 +166,8 @@ The rewards are computed by evaluating the generated captions using a discrimina
 	2. "An animal is outside."
 
 	Assuming the discriminator scores them as 0.8 and 0.6, respectively, and the baseline (greedy output) score is 0.5. The rewards would be:
-	- For caption 1: \( 0.8 - 0.5 = 0.3 \)
-	- For caption 2: \( 0.6 - 0.5 = 0.1 \)
+	- For caption 1: $$\( 0.8 - 0.5 = 0.3 \)$$
+	- For caption 2: $$\( 0.6 - 0.5 = 0.1 \)$$
 
 	The generator will then use these rewards to adjust its parameters to increase the probability of generating captions that receive higher rewards.
 
@@ -178,7 +178,7 @@ The model is a sophisticated system that integrates generative and discriminativ
 
 - **Datasets** - Coco2014
 - **Notebooks** - https://github.com/astro215/cgt-gans/tree/main/training
-- ** Deployment** - 
+- **Deployment** - 
 
 
 
