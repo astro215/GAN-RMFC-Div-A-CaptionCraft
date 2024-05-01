@@ -130,11 +130,10 @@ Loss Functions
 The generator loss is computed as a combination of the reinforcement learning reward (`reward_loss`) and the feature discriminator loss (`fd_loss`):
 
 
-	![\Large G_{\text{loss}} = \text{reward\_weight} \times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}](https://latex.codecogs.com/svg.latex?\Large&space;	G_{\text{loss}} = \text{reward\_weight}\times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}) 
 
-	$$
-	G_{\text{loss}} = \text{reward\_weight} \times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}
-	$$
+	$
+	[ D\_loss = \text{reward\_weight} \times \text{reward\_loss} + (1 - \text{reward\_weight}) \times \text{fd\_loss}]
+	$
 
 
 
