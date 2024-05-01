@@ -1,7 +1,7 @@
 **CaptionCraft**
 --
 
-- github - https://github.com/astro215/caption-craft-gans/blob/main/training/caption-craft-gans-test-8.ipynb
+- github - https://github.com/astro215/GAN-RMFC-Div-A-CaptionCraft/blob/main/caption-craft-gans/training/caption-craft-gans-train-8.ipynb
 - kaggle - https://www.kaggle.com/code/astro215/caption-craft-gans-test
 
 
