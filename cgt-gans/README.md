@@ -70,7 +70,7 @@ The model is a sophisticated system that integrates generative and discriminativ
 
 - **Datasets** - Coco2014
 - **Notebooks** - https://github.com/astro215/cgt-gans/tree/main/training
-- ** Deployment** - 
+- **Deployment** - 
 
 
 
@@ -79,10 +79,7 @@ The model is a sophisticated system that integrates generative and discriminativ
 
 
 
-# References
-- WGANS - https://github.com/bastienvanderplaetse/gan-image-captioning 
-- Pix2Struct - https://arxiv.org/abs/2210.03347 , 
-- 
+# References 
 - https://github.com/fkodom/clip-text-decoder
 - https://medium.com/@uppalamukesh/clipcap-clip-prefix-for-image-captioning-3970c73573bc
 - https://github.com/jmisilo/clip-gpt-captioning
