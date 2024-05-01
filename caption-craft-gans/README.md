@@ -104,6 +104,48 @@ The model is a sophisticated system that integrates generative and discriminativ
 - **Deployment** - 
 
 
+## Data_Preprocess
+
+We take COCO Dataset and GCC external corpus as an example.
+* Extract clip embeddings for COCO images and captions. All extracted embedding `.pkl` files will be saved in ~/data/coco.
+    ```
+    python preprocess/coco/coco_train_images.py
+    python preprocess/coco/coco_train_captions.py
+    python preprocess/coco/coco_val-test.py
+    ```
+
+    ```
+    python preprocess/generate_embeddings.py --image_pkl ./data/coco/coco_ViT-L_14_train_images.pkl --caption_pkl ./data/coco/coco_ViT-L_14_train_captions.pkl --image_dataset coco --caption_corpus coco --t 100
+    ```
+    
+## Initialization
+* Initialize generator using COCO Captions:
+
+```
+python initialization.py --output_dir path/to/save/folder --data ./data/coco/coco_ViT-L_14_train_captions.pkl
+```
+
+## Training
+
+
+```
+!torchrun  --nproc_per_node=2  --master_port  17527  \
+/kaggle/working/CgtGAN-main/CgtGAN-main/cgtgan.py \
+--output_dir /kaggle/working/output \
+--generator_init /kaggle/input/clip-embedding-cgt-gans/model_epoch4.pt \
+--data_train /kaggle/working/data/clip-embedding-cgt-gans/coco_images_coco_captions_ViT-L_14_100.pkl \
+--data_val /kaggle/working/data/clip-embedding-cgt-gans/coco_ViT-L_14_val.pkl \
+--data_test /kaggle/working/data/clip-embedding-cgt-gans/coco_ViT-L_14_test.pkl \
+--text_corpus /kaggle/working/data/clip-embedding-cgt-gans/coco_train_sentences.pkl \
+--gt_val /kaggle/working/data/coco/annotations/val_caption_coco_format.json \
+--gt_test /kaggle/working/data/coco/annotations/test_caption_coco_format.json \
+--do_train \
+--batch_size 16 \
+--epochs 4
+```
+
+
+
 
 # References 
 - https://github.com/fkodom/clip-text-decoder
