@@ -5,8 +5,42 @@ cgt-gans
 - kaggle - https://www.kaggle.com/code/astro215/cgt-gans-test
 
 
-**Cgt-GANs**
+# **Cgt-GANs**
 - The model involves training a generative model (generator) and a discriminative model (discriminator) using a paired dataset of image and caption embeddings. The objective is to generate captions that are contextually and semantically aligned with given images. The system uses a GAN-like architecture where the generator tries to create plausible captions, and the discriminator evaluates them.
+
+
+### Generator Model Architecture
+The generator model is based on the `ClipCaptionModel`, which leverages a GPT-2 structure modified to interact with image features:
+
+- **GPT2LMHeadModel**: The core is a standard GPT-2 model adapted for language modeling and text generation. This part consists of:
+  - **Embedding Layers**: Word and position embeddings encode the input tokens and their positions within a sequence.
+  - **Transformer Blocks**: Comprised of multiple layers, each containing a self-attention mechanism and a feed-forward network (MLP).
+  - **LayerNorm and Dropout**: Used across different points in the transformer to normalize activations and prevent overfitting.
+
+- **Clip Projector (MLP)**: This Multi-Layer Perceptron takes embeddings from a CLIP model (trained separately to encode image data) and projects them into the space where GPT-2 embeddings reside. This fusion enables the model to generate text based on visual input.
+
+### Discriminator Model Architecture
+The discriminator is structured around a `RobertaDiscriminator`:
+
+- **RoBERTa Model**: An adaptation of the BERT architecture optimized for more robust performance in language understanding tasks.
+  - **RobertaEmbeddings**: Handles embeddings related to words, positions, and token types.
+  - **RobertaEncoder**: Contains multiple encoding layers that process text through self-attention and feed-forward networks.
+  - **RobertaPooler**: Processes the output of the last encoding layer to produce a fixed-size representation.
+
+- **MLP (Discriminator Head)**: A simple MLP that processes the output of the RoBERTa model to determine the authenticity of the generated captions (real vs. generated).
+
+### Losses
+- **BCEWithLogitsLoss**: Used by the discriminator to classify whether the input captions are real or fake, facilitating the training of the GAN to improve the realism of the generated captions.
+
+### Optimization
+- **Adam Optimizer**: Typically used for training both the generator and discriminator, facilitating efficient stochastic optimization with adaptive estimation of lower-order moments.
+
+### Interesting Insights
+- **Integration of CLIP and GPT**: The merging of visual and textual models (CLIP for visual embeddings and GPT-2 for text generation) is a notable innovation that enhances the generator's ability to create relevant and contextually appropriate captions based on visual inputs.
+- **Training Requirements**: As noted, the uninitialized weights (e.g., RoBERTa's pooler layer) indicate the need for further fine-tuning and training on a downstream task specific to the application, underscoring the adaptability and potential customization of the model.
+
+### Conclusion
+The use of a CLIP-based image encoder combined with a GPT-based text generator represents a powerful approach to bridging the gap between visual data and natural language. The discriminator's role in refining the generator's output through adversarial training further enhances the capability to produce accurate and meaningful image captions. This architecture leverages the strengths of advanced models in NLP and computer vision to tackle complex cross-modal tasks.
 
  **Model Architecture**
 
