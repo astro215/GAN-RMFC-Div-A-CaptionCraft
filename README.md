@@ -1,7 +1,7 @@
 Github - https://github.com/astro215/GAN-RMFC-Div-A-CaptionCraft/edit/main
 
 
-cgt-gans
+CaptionCraft
 --
 
 - github - https://github.com/astro215/cgt-gans/blob/main/training/cgt-gans-test-8.ipynb
